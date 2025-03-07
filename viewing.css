@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.container {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 0 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center; 
+}
+
+.horizontal-line {
+    width: 30%; 
+    height: 2px; 
+    background-color: #007BFf; 
+    margin: 0 auto; 
+    margin-bottom: 20px; 
+}
+
+h3 {
+    color: #333;
+    margin: 20px 0 10px;
+    position: relative;
+}
+
+h3::after {
+    content: '';
+    display: block;
+    width: 100%; 
+    height: 3px; 
+    background: #9b59b6; 
+    margin-top: 5px;
+    border-radius: 2px; 
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between; 
+    margin-bottom: 10px; 
+}
+
+.info-label {
+    font-weight: bold; 
+    color: #333;
+    flex: 1; 
+}
+
+.info-value {
+    color: #555;
+    flex: 2; 
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap; 
+    margin-bottom: 20px; 
+}
+
+.flex-item {
+    flex: 1 1 30%; 
+    margin-right: 20px; 
+}
+
+.flex-item:last-child {
+    margin-right: 0; /* Remove margin for the last item */
+}
+
+.button-container {
+    text-align: center; /* Center the button container */
+    margin-top: 20px; /* Space above the button */
+}
+
+.button-container button {
+    background-color: #007BFf; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    width: 30%;
+}
+
+.button-container button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
