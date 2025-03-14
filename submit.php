@@ -19,13 +19,13 @@ if ($formData) {
 
     // Insert data into tbl_birth
     $stmt = $conn->prepare("INSERT INTO tbl_birth(b_unit, b_blk, b_sn, b_sub, b_brgy, b_city, b_province, b_country, b_zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("issssssss", $formData['birth']['birth_unit'], $formData['birth']['birth_blk_no'], $formData['birth']['birth_street_name'], $formData['birth']['birth_subdivision'], $formData['birth']['birth_brgy'], $formData['birth']['birth_city'], $formData['birth']['birth_province'], $formData['birth']['birthcountry'], $formData['birth']['birth_zip_code']);
+    $stmt->bind_param("sssssssss", $formData['birth']['birth_unit'], $formData['birth']['birth_blk_no'], $formData['birth']['birth_street_name'], $formData['birth']['birth_subdivision'], $formData['birth']['birth_brgy'], $formData['birth']['birth_city'], $formData['birth']['birth_province'], $formData['birth']['birthcountry'], $formData['birth']['birth_zip_code']);
     $stmt->execute();
     $bId = $stmt->insert_id; 
 
     // Insert data into tbl_address
     $stmt = $conn->prepare("INSERT INTO tbl_address(h_unit, h_blk, h_sn, h_sub, h_brgy, h_city, h_province, h_country, h_zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("issssssss", $formData['address']['unit'], $formData['address']['blk_no'], $formData['address']['street_name'], $formData['address']['subdivision'], $formData['address']['brgy'], $formData['address']['city'], $formData['address']['province'], $formData['address']['country'], $formData['address']['zip_code']);
+    $stmt->bind_param("sssssssss", $formData['address']['unit'], $formData['address']['blk_no'], $formData['address']['street_name'], $formData['address']['subdivision'], $formData['address']['brgy'], $formData['address']['city'], $formData['address']['province'], $formData['address']['country'], $formData['address']['zip_code']);
     $stmt->execute();
     $hId = $stmt->insert_id; 
 
@@ -113,7 +113,7 @@ $conn->close();
                 </form>
 
                 <!-- Delete Button Form -->
-                <form action="delete.php" method="post" style="display:inline;">
+                <form action="deleten.php" method="post" style="display:inline;">
                     <input type="hidden" name="id" value="<?= $row['u_id'] ?>"> <!-- Hidden ID -->
                     <button type="submit" class="delete-button" onclick="return confirm('Are you sure you want to delete this record?');">Delete</button>
                 </form>
@@ -152,7 +152,7 @@ $conn->close();
             <td>
 
 
-            <form action="view_one.php" method="GET" style="display: inline;">
+        <form action="view_one.php" method="GET" style="display: inline;">
         <input type="hidden" name="table" value="birth">
         <input type="hidden" name="id" value="<?= $row['b_id'] ?>">
         <button type="submit" class="subBtn">View Birth</button>

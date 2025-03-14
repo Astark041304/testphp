@@ -235,6 +235,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'taxId' => $taxId,
             'nationality' => $nationality,
             'religion' => $religion,
+
             'birth' => [
                 'birth_unit' => $birthunit,
                 'birth_blk_no' => $birthblk,
@@ -247,7 +248,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 'birthcountry' => $birthcountry,
             ],
             'address' => [
-                'unit' => $unit,
+                'home_unit' => $unit,
                 'blk_no' => $blk,
                 'street_name' => $streetName,
                 'subdivision' => $subdivision,

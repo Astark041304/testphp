@@ -1,0 +1,165 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2d3250;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: var(--container-color);
+    width: 100%; /* Increased width for better spacing */
+    max-width: 800px; /* Slightly increased max-width */
+    margin: 30px auto; /* Increased margin for more space */
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 30px; /* Increased padding for more breathing room */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    position: relative;
+    margin-top: 80px;
+
+}
+
+:root {
+    --bg-color: #f0f4f8;   
+    --container-color: #ffffff;
+    --text-color: #333333;
+    --hover-color: #8F0B13;
+    --button-color: #681304;
+    --border-color: rgba(130, 106, 251);
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 30px; /* Increased height for better aesthetics */
+    top: 0;
+    left: 0;
+    padding: 1.5rem 3%; /* Increased padding for header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(22, 20, 20, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    z-index: 100;
+}
+
+.header h2 {
+    font-size: 2.5rem; /* Increased font size */
+    font-weight: 700;
+    color: white;
+}
+
+span {
+    color: var(--border-color);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em; /* Increased font size for h1 */
+    margin-bottom: 20px; /* Added margin for spacing */
+}
+
+header {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px; /* Increased margin for spacing */
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.details {
+    margin-bottom: 30px; /* Increased margin for spacing */
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+.fields, .type, .place, .home, .number, .country {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px; /* Increased margin for spacing */
+}
+
+.gender{
+    margin-bottom: 10px;
+}
+
+.input-field, .input-type, .input-place, .input-home, .input-number {
+    flex: 1 1 45%; /* Flexbox for responsive layout */
+    margin-right: 25px; /* Increased margin for spacing */
+}
+
+.input-field label, .input-type label, .input-place label, .input-home label, .input-number label {
+    display: block;
+    margin-bottom: 8px; /* Increased margin for spacing */
+    font-weight: bold;
+    margin-top: 10px;
+    color: #555;    
+}
+
+input[type="text"], input[type="date"], input[type="email"], select {
+    width: 100%;
+    padding: 12px; /* Increased padding for better usability */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Slightly rounded corners */
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+    margin-right: 8px; /* Increased margin for better spacing */
+}
+
+.Select {
+    display: flex;
+    align-items: center;
+}
+
+.Select select {
+    flex: 1;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 20px; /* Added margin for spacing */
+}
+
+.subBtn {
+    background-color: var(--hover-color); /* Button color */
+    color: white;
+    border: none;
+    width: 100%;
+    height: 50px;
+    padding: 12px 25px; /* Increased padding for better usability */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em; /* Slightly increased font size */
+}
+
+.subBtn:hover {
+    background-color: #a10d1a; /* Darker shade on hover */
+}
+
+.error-container {
+    margin-bottom: 30px; /* Increased margin for spacing */
+}
+
+.error {
+    color: red;
+    margin-bottom: 15px; /* Increased margin for spacing */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .input-field, .input-type, .input-place, .input-home, .input-number {
+        flex: 1 1 100%; /* Stack inputs on small screens */
+        margin-right: 0;
+        margin-bottom: 15px; /* Added margin for spacing */
+    }
+}
