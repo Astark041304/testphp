@@ -1,90 +1,129 @@
 <?php
 class SubmitModel {
     private $conn;
+    private $formData;
 
-    public function __construct($dbConnection) {
-        $this->conn = $dbConnection;
+    public function __construct($conn) {
+        $this->conn = $conn;
+        $this->formData = $_SESSION['form_data'] ?? null;
     }
 
-    public function insertFormation($formData) {
+    public function processFormData() {
+        if (!$this->formData) {
+            return;
+        }
+
+        unset($_SESSION['form_data']); 
+
+        $this->insertFormation();
+        $this->insertBirth();
+        $this->insertAddress();
+        $this->insertContact();
+        $this->insertParents();
+    }
+
+    private function insertFormation() {
         $stmt = $this->conn->prepare("INSERT INTO tbl_formation(u_lname, u_fname, u_middle, u_dob, u_sex, u_status, u_tax, u_nationality, u_religion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        if (!$stmt) {
-            error_log("Prepare failed: " . $this->conn->error);
-            return false;
-        }
-        $stmt->bind_param("sssssssss", $formData['last_name'], $formData['first_name'], $formData['middle_initial'], $formData['date_of_birth'], $formData['sex'], $formData['civil_status'], $formData['tax_id'], $formData['nationality'], $formData['religion']);
+        $stmt->bind_param("sssssssss", 
+            $this->formData['last_name'], 
+            $this->formData['first_name'], 
+            $this->formData['middle_initial'], 
+            $this->formData['date_of_birth'], 
+            $this->formData['sex'], 
+            $this->formData['civil_status'], 
+            $this->formData['tax_id'], 
+            $this->formData['nationality'], 
+            $this->formData['religion']
+        );
+
         if (!$stmt->execute()) {
-            error_log("Execute failed: " . $stmt->error);
-            return false;
+            throw new Exception("Error inserting formation data: " . $stmt->error);
         }
-        return $stmt->insert_id;
+        $stmt->close();
     }
 
-    public function insertBirth($formData) {
+    private function insertBirth() {
         $stmt = $this->conn->prepare("INSERT INTO tbl_birth(b_unit, b_blk, b_sn, b_sub, b_brgy, b_city, b_province, b_country, b_zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        if (!$stmt) {
-            error_log("Prepare failed: " . $this->conn->error);
-            return false;
-        }
-        $stmt->bind_param("sssssssss", $formData['birth_unit'], $formData['birth_blk_no'], $formData['birth_street_name'], $formData['birth_subdivision'], $formData['birth_brgy'], $formData['birth_city'], $formData['birth_province'], $formData['birthcountry'], $formData['birth_zip_code']);
+        $stmt->bind_param("issssssss", 
+            $this->formData['birth']['birth_unit'], 
+            $this->formData['birth']['birth_blk_no'], 
+            $this->formData['birth']['birth_street_name'], 
+            $this->formData['birth']['birth_subdivision'], 
+            $this->formData['birth']['birth_brgy'], 
+            $this->formData['birth']['birth_city'], 
+            $this->formData['birth']['birth_province'], 
+            $this->formData['birth']['birthcountry'], // Change this line
+            $this->formData['birth']['birth_zip_code']
+        );
+    
         if (!$stmt->execute()) {
-            error_log("Execute failed: " . $stmt->error);
-            return false;
+            throw new Exception("Error inserting birth data: " . $stmt->error);
         }
-        return $stmt->insert_id;
+        $stmt->close();
     }
 
-    public function insertAddress($formData) {
+    private function insertAddress() {
         $stmt = $this->conn->prepare("INSERT INTO tbl_address(h_unit, h_blk, h_sn, h_sub, h_brgy, h_city, h_province, h_country, h_zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        if (!$stmt) {
-            error_log("Prepare failed: " . $this->conn->error);
-            return false;
-        }
-        $stmt->bind_param("sssssssss", $formData['unit'], $formData['blk_no'], $formData['street_name'], $formData['subdivision'], $formData['brgy'], $formData['city'], $formData['province'], $formData['country'], $formData['zip_code']);
+        $stmt->bind_param("issssssss", 
+            $this->formData['address']['unit'], 
+            $this->formData['address']['blk_no'], 
+            $this->formData['address']['street_name'], 
+            $this->formData['address']['subdivision'], 
+            $this->formData['address']['brgy'], 
+            $this->formData['address']['city'], 
+            $this->formData['address']['province'], 
+            $this->formData['address']['country'], 
+            $this->formData['address']['zip_code']
+        );
+
         if (!$stmt->execute()) {
-            error_log("Execute failed: " . $stmt->error);
-            return false;
+            throw new Exception("Error inserting address data: " . $stmt->error);
         }
-        return $stmt->insert_id;
+        $stmt->close();
     }
 
-    public function insertContact($formData) {
+    private function insertContact() {
         $stmt = $this->conn->prepare("INSERT INTO tbl_contact(c_mobile, c_email, c_tel) VALUES (?, ?, ?)");
-        if (!$stmt) {
-            error_log("Prepare failed: " . $this->conn->error);
-            return false;
-        }
-        $stmt->bind_param("sss", $formData['mobile_phone'], $formData['email'], $formData['telephone_number']);
+        $stmt->bind_param("sss", 
+            $this->formData['contact']['mobile'], 
+            $this->formData['contact']['email'], 
+            $this->formData['contact']['telephone']
+        );
+
         if (!$stmt->execute()) {
-            error_log("Execute failed: " . $stmt->error);
-            return false;
+            throw new Exception("Error inserting contact data: " . $stmt->error);
         }
-        return $stmt->insert_id;
+        $stmt->close();
     }
 
-    public function insertParents($formData) {
+    private function insertParents() {
         $stmt = $this->conn->prepare("INSERT INTO tbl_parents(f_lname, f_fname, f_middle, m_lname, m_fname, m_middle) VALUES (?, ?, ?, ?, ?, ?)");
-        if (!$stmt) {
-            error_log("Prepare failed: " . $this->conn->error);
-            return false;
-        }
-        $stmt->bind_param("ssssss", $formData['father_last_name'], $formData['father_first_name'], $formData['father_middle_name'], $formData['mother_last_name'], $formData['mother_first_name'], $formData['mother_middle_name']);
+        $stmt->bind_param("ssssss", 
+            $this->formData['father']['last_name'], 
+            $this->formData['father']['first_name'], 
+            $this->formData['father']['middle_name'], 
+            $this->formData['mother']['last_name'], 
+            $this->formData['mother']['first_name'], 
+            $this->formData['mother']['middle_name']
+        );
+
         if (!$stmt->execute()) {
-            error_log("Execute failed: " . $stmt->error);
-            return false;
+            throw new Exception("Error inserting parents data: " . $stmt->error);
         }
-        return $stmt->insert_id;
+        $stmt->close();
     }
 
-    public function fetchAll($table) {
-        $result = $this->conn->query("SELECT * FROM $table");
-        if (!$result) {
-            error_log("Query error: " . $this->conn->error);
-        }
-        return $result;
+    public function fetchData() {
+        $data = [];
+        $data['formation'] = $this->conn->query("SELECT * FROM tbl_formation");
+        $data['birth'] = $this->conn->query("SELECT * FROM tbl_birth");
+        $data['address'] = $this->conn->query("SELECT * FROM tbl_address");
+        $data['contact'] = $this->conn->query("SELECT * FROM tbl_contact");
+        $data['parents'] = $this->conn->query("SELECT * FROM tbl_parents");
+        return $data;
     }
 
-    public function close() {
+    public function closeConnection() {
         $this->conn->close();
     }
 }
