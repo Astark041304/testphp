@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Submitted Data</h2>
+        <h2>Submitted Data Informations</h2>
 
         <h3>Personal Information</h3>
         <table class="personal">
@@ -46,7 +46,7 @@
                     <form action="view_one.php" method="GET" style="display: inline;">
                         <input type="hidden" name="table" value="formation">
                         <input type="hidden" name="id" value="<?= $row['u_id'] ?>">
-                        <button type="submit" class="subBtn">View</button>
+                        <button type="submit" class="subBtn">View User </button>
                     </form>
                     <form action="edit.php" method="GET" style="display: inline;">
                         <input type="hidden" name="id" value="<?= $row['u_id'] ?>">
@@ -92,7 +92,7 @@
                     <form action="view_one.php" method="GET" style="display: inline;">
                         <input type="hidden" name="table" value="birth">
                         <input type="hidden" name="id" value="<?= $row['b_id'] ?>">
-                        <button type="submit" class="subBtn">View</button>
+                        <button type="submit" class="subBtn">View User</button>
                     </form>
                     <form action="edit.php" method="GET" style="display: inline;">
                         <input type="hidden" name="id" value="<?= $row['b_id'] ?>">
@@ -138,7 +138,7 @@
                     <form action="view_one.php" method="GET" style="display: inline;">
                         <input type="hidden" name="table" value="address">
                         <input type="hidden" name="id" value="<?= $row['h_id'] ?>">
-                        <button type="submit" class="subBtn">View</button>
+                        <button type="submit" class="subBtn">View User </button>
                     </form>
                     <form action="edit.php" method="GET" style="display: inline;">
                         <input type="hidden" name="id" value="<?= $row['h_id'] ?>">
@@ -152,7 +152,6 @@
             </tr>
             <?php endwhile; ?>
         </table>
-
         <h3>Contact Information</h3>
         <table class="contact">
             <tr>
@@ -172,7 +171,7 @@
                 <form action="view_one.php" method="GET" style="display: inline;">
                         <input type="hidden" name="table" value="contact">
                         <input type="hidden" name="id" value="<?= $row['c_id'] ?>">
-                        <button type="submit" class="subBtn">View</button>
+                        <button type="submit" class="subBtn">View User</button>
                     </form>
                     <form action="edit.php" method="GET" style="display: inline;">
                         <input type="hidden" name="id" value="<?= $row['c_id'] ?>">
@@ -212,7 +211,7 @@
                     <form action="view_one.php" method="GET" style="display: inline;">
                         <input type="hidden" name="table" value="parents">
                         <input type="hidden" name="id" value="<?= $row['p_id'] ?>">
-                        <button type="submit" class="subBtn">View</button>
+                        <button type="submit" class="subBtn">View User</button>
                     </form>
                     <form action="edit.php" method="GET" style="display: inline;">
                         <input type="hidden" name="id" value="<?= $row['p_id'] ?>">
@@ -229,7 +228,7 @@
 
         <div class="button-container">
             <form action="index.php" method="get">
-                <button type="submit">Add Another Entry</button>
+                <button type="submit">Add New Information</button>
             </form>    
         </div>
     </div>

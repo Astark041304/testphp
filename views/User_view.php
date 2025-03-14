@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="css/view_one.css">
 </head>
 <body>
-    <h2 style="text-align:center;">Viewing Record for ID: <?= htmlspecialchars($id) ?></h2>
+    <div class="container">
+    <h2 style="text-align:center;">User Information for ID: <?= htmlspecialchars($id) ?></h2>
     <table>
         <?php foreach ($data as $key => $value): ?>
             <tr>
@@ -17,10 +18,11 @@
         <?php endforeach; ?>
     </table>
     <div class="button-container">
-        <a href="<?= isset($_SERVER['HTTP_REFERER']) ? htmlspecialchars($_SERVER['HTTP_REFERER']) : 'index.php'; ?>" class="back-button">Back to Submit</a>
+        <a href="<?= isset($_SERVER['HTTP_REFERER']) ? htmlspecialchars($_SERVER['HTTP_REFERER']) : 'index.php'; ?>" class="back-button">Table Details</a>
         <form action="index.php" method="get">
-            <button type="submit">Back To Index</button>
+            <button type="submit">Form Register</button>
         </form>    
+    </div>
     </div>
 </body>
 </html>

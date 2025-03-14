@@ -16,7 +16,7 @@ class ViewController {
         $data = $model->getData();
         $model->closeConnection();
 
-        include '../views/User_view.php'; // Load the view
+        include '../views/user_view.php'; // Load the view
     }
 }
 ?>

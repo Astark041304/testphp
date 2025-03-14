@@ -16,7 +16,7 @@ class ViewAllController {
         $data = $model->getData();
         $model->closeConnection();
 
-        include '../views/ViewAllUser_view.php'; // Load the view
+        include '../views/viewall_view.php'; // Load the view
     }
 }
 ?>

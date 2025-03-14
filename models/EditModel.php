@@ -71,7 +71,7 @@ class EditModel {
     
         // Update birth data
         $stmt = $this->conn->prepare("UPDATE tbl_birth SET b_unit = ?, b_blk = ?, b_sn = ?, b_sub = ?, b_brgy = ?, b_city = ?, b_province = ?, b_country = ?, b_zip = ? WHERE b_id = ?");
-        $stmt->bind_param("issssssssi", 
+        $stmt->bind_param("sssssssssi", 
             $postData['birth_unit'], 
             $postData['birth_blk_no'], 
             $postData['birth_street_name'], 
@@ -88,7 +88,7 @@ class EditModel {
     
         // Update address data
         $stmt = $this->conn->prepare("UPDATE tbl_address SET h_unit = ?, h_blk = ?, h_sn = ?, h_sub = ?, h_brgy = ?, h_city = ?, h_province = ?, h_country = ?, h_zip = ? WHERE h_id = ?");
-        $stmt->bind_param("issssssssi", 
+        $stmt->bind_param("sssssssssi", 
             $postData['unit'], 
             $postData['blk_no'], 
             $postData['street_name'], 

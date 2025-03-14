@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Data</title>
-    <link rel="stylesheet" href="css/viewing.css">
+    <link rel="stylesheet" href="css/viewall.css">
 </head>
 <body>
 <div class="container">
@@ -17,9 +17,7 @@
 
     if (!empty($data['formation'])) {
         $formationData = $data['formation'];
-        echo "<h2>Details for ID: " . htmlspecialchars($formationData['u_id']) . "</h2>";
-        echo "<div class='horizontal-line'></div>";
-        echo "<h3>Personal Information</h3>";
+        echo "<h2>Personal Information</h2>";
         echo "<div class='flex-container'>";
         echo displayData("Last Name", $formationData['u_lname']);
         echo displayData("First Name", $formationData['u_fname']);
@@ -42,7 +40,7 @@
     // Display other data if available
     if (!empty($data['birth'])) {
         $birthData = $data['birth'];
-        echo "<h3>Place of Birth</h3>";
+        echo "<h2>Place of Birth</h2>";
         echo "<div class='flex-container'>";
         echo displayData("Unit", $birthData['b_unit']);
         echo displayData("Block", $birthData['b_blk']);
@@ -62,7 +60,7 @@
 
     if (!empty($data['address'])) {
         $addressData = $data['address'];
-        echo "<h3>Home Address</h3>";
+        echo "<h2>Home Address</h2>";
         echo "<div class='flex-container'>";
         echo displayData("Unit", $addressData['h_unit']);
         echo displayData("Block", $addressData['h_blk']);
@@ -82,7 +80,7 @@
 
     if (!empty($data['contact'])) {
         $contactData = $data['contact'];
-        echo "<h3>Contact Information</h3>";
+        echo "<h2>Contact Information</h2>";
         echo "<div class='flex-container'>";
         echo displayData("Mobile", $contactData['c_mobile']);
         echo displayData("Telephone", $contactData['c_tel']);
@@ -92,7 +90,7 @@
 
     if (!empty($data['parents'])) {
         $parentsData = $data['parents'];
-        echo "<h3>Parents Information</h3>";
+        echo "<h2>Parents Information</h2>";
         echo "<div class='flex-container'>";
         echo displayData("Father's Last Name", $parentsData['f_lname']);
         echo displayData("Father's First Name", $parentsData['f_fname']);
@@ -106,7 +104,7 @@
     }
     ?>
     <div class="button-container">
-        <form action="index.php" method="get">
+        <form action="submit.php" method="get">
             <button type="submit">Back</button>
         </form>
     </div>

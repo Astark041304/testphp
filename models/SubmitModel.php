@@ -44,7 +44,7 @@ class SubmitModel {
 
     private function insertBirth() {
         $stmt = $this->conn->prepare("INSERT INTO tbl_birth(b_unit, b_blk, b_sn, b_sub, b_brgy, b_city, b_province, b_country, b_zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("issssssss", 
+        $stmt->bind_param("sssssssss", 
             $this->formData['birth']['birth_unit'], 
             $this->formData['birth']['birth_blk_no'], 
             $this->formData['birth']['birth_street_name'], 
@@ -64,7 +64,7 @@ class SubmitModel {
 
     private function insertAddress() {
         $stmt = $this->conn->prepare("INSERT INTO tbl_address(h_unit, h_blk, h_sn, h_sub, h_brgy, h_city, h_province, h_country, h_zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("issssssss", 
+        $stmt->bind_param("sssssssss", 
             $this->formData['address']['unit'], 
             $this->formData['address']['blk_no'], 
             $this->formData['address']['street_name'], 
