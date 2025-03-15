@@ -32,72 +32,93 @@ h3 {
     margin-bottom: 10px; 
 }
 
-/* Table Styles */
+
 table {
-    width: 100%; /* Full width for tables */
-    border-collapse: collapse; /* Remove space between borders */
-    margin-bottom: 30px; /* Space below each table */
+    width: 100%;
+    border-collapse: collapse; 
+    margin-bottom: 30px;
 }
 
 th, td {
-    border: 1px solid #cec1ee; /* Light border for table cells */
-    padding: 12px; /* Padding for table cells */
-    text-align: left; /* Left align text */
+    border: 1px solid #cec1ee;
+    padding: 12px;
+    text-align: left;
 }
 
 th {
-    background-color: #f2f2f2; /* Light gray background for headers */
-    color: #333; /* Dark text color for headers */
-    font-weight: bold; /* Bold text for headers */
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
 }
 
 tr:hover {
-    background-color: #f9f9f9; /* Light hover effect for rows */
-    cursor: pointer; /* Pointer cursor on hover */
+    background-color: #f9f9f9;
+    cursor: pointer;
 }
 
-/* Button Styles */
-.subBtn, .delete-button {
-    background-color: #32a1bd; /* Primary button color */
-    color: white; /* White text color */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 15px; /* Padding for buttons */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 14px; /* Font size for buttons */
-    transition: background-color 0.3s; /* Smooth transition for hover */
-    margin-top: 5px; /* Space above buttons */
+
+.tabbtn, .delete-button {
+    background-color: #e4340c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-top: 5px;
 }
 
-.subBtn:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+.tabbtn:hover {
+    background-color: #b32400;
+    transform: translateX(5px);
+}
+
+.vbtn, .delete-button {
+    background-color: #32a1bd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-top: 5px;
+}
+
+.vbtn:hover {
+    background-color: #0056b3;
+    transform: translateX(5px);
 }
 
 .delete-button {
-    background-color: #be9522; /* Red color for delete button */
+    background-color: #be9522;
 }
 
 .delete-button:hover {
-    background-color: #c82333; /* Darker red on hover */
+    background-color: #c82333;
+    transform: translateX(5px);
 }
 
-/* Button Container */
+
+
 .button-container {
-    margin-top: 20px; /* Space above the button container */
+    margin-top: 20px;
 }
 
 .button-container button {
-    background-color: #28a745; /* Green color for add button */
-    color: white; /* White text color */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 20px; /* Padding for button */
-    font-size: 16px; /* Font size for button */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth transition for hover */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .button-container button:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #218838;
+    transform: translateX(5px);
 }
 

@@ -18,7 +18,7 @@
         <h3>Personal Information</h3>
         <table class="personal">
             <tr>
-                <th>U_id</th>  
+                <th>Id</th>  
                 <th>Last Name</th> 
                 <th>First Name</th> 
                 <th>Middle Initial</th> 
@@ -46,11 +46,11 @@
                     <form action="view_one.php" method="GET" style="display: inline;">
                         <input type="hidden" name="table" value="formation">
                         <input type="hidden" name="id" value="<?= $row['u_id'] ?>">
-                        <button type="submit" class="subBtn">View User </button>
+                        <button type="submit" class="vbtn">View User </button>
                     </form>
                     <form action="edit.php" method="GET" style="display: inline;">
                         <input type="hidden" name="id" value="<?= $row['u_id'] ?>">
-                        <button type="submit" class="subBtn">Update</button>
+                        <button type="submit" class="tabbtn">Update</button>
                     </form>
                     <form action="delete.php" method="post" style="display:inline;">
                         <input type="hidden" name="id" value="<?= $row['u_id'] ?>">
@@ -64,7 +64,7 @@
         <h3>Place of Birth</h3>
         <table class="birth">
             <tr>
-                <th>B_id</th>  
+                <th>Id</th>  
                 <th>Unit</th> 
                 <th>Block</th> 
                 <th>Street Name</th> 
@@ -92,11 +92,11 @@
                     <form action="view_one.php" method="GET" style="display: inline;">
                         <input type="hidden" name="table" value="birth">
                         <input type="hidden" name="id" value="<?= $row['b_id'] ?>">
-                        <button type="submit" class="subBtn">View User</button>
+                        <button type="submit" class="vbtn">View User</button>
                     </form>
                     <form action="edit.php" method="GET" style="display: inline;">
                         <input type="hidden" name="id" value="<?= $row['b_id'] ?>">
-                        <button type="submit" class="subBtn">Update</button>
+                        <button type="submit" class="tabbtn">Update</button>
                     </form>
                     <form action="delete.php" method="post" style="display:inline;">
                         <input type="hidden" name="id" value="<?= $row['b_id'] ?>">
@@ -110,7 +110,7 @@
         <h3>Home Address</h3>
         <table class="address">
             <tr>
-                <th>H_id</th>  
+                <th>Id</th>  
                 <th>Unit</th> 
                 <th>Block</th> 
                 <th>Street Name</th> 
@@ -138,11 +138,11 @@
                     <form action="view_one.php" method="GET" style="display: inline;">
                         <input type="hidden" name="table" value="address">
                         <input type="hidden" name="id" value="<?= $row['h_id'] ?>">
-                        <button type="submit" class="subBtn">View User </button>
+                        <button type="submit" class="vbtn">View User </button>
                     </form>
                     <form action="edit.php" method="GET" style="display: inline;">
                         <input type="hidden" name="id" value="<?= $row['h_id'] ?>">
-                        <button type="submit" class="subBtn">Update</button>
+                        <button type="submit" class="tabbtn">Update</button>
                     </form>
                     <form action="delete.php" method="post" style="display:inline;">
                         <input type="hidden" name="id" value="<?= $row['h_id'] ?>">
@@ -155,7 +155,7 @@
         <h3>Contact Information</h3>
         <table class="contact">
             <tr>
-                <th>C_id</th> 
+                <th>Id</th> 
                 <th>Mobile</th> 
                 <th>Telephone</th> 
                 <th>Email</th>
@@ -171,11 +171,11 @@
                 <form action="view_one.php" method="GET" style="display: inline;">
                         <input type="hidden" name="table" value="contact">
                         <input type="hidden" name="id" value="<?= $row['c_id'] ?>">
-                        <button type="submit" class="subBtn">View User</button>
+                        <button type="submit" class="vbtn">View User</button>
                     </form>
                     <form action="edit.php" method="GET" style="display: inline;">
                         <input type="hidden" name="id" value="<?= $row['c_id'] ?>">
-                        <button type="submit" class="subBtn">Update</button>
+                        <button type="submit" class="tabbtn">Update</button>
                     </form>
                     <form action="delete.php" method="post" style="display:inline;">
                         <input type="hidden" name="id" value="<?= $row['c_id'] ?>">
@@ -189,7 +189,7 @@
         <h3>Parents Information</h3>
         <table class="parents">
             <tr>
-                <th>P_id</th> 
+                <th>Id</th> 
                 <th>Father's Last Name</th> 
                 <th>Father's First Name</th> 
                 <th>Father's Middle Initial</th>
@@ -211,11 +211,11 @@
                     <form action="view_one.php" method="GET" style="display: inline;">
                         <input type="hidden" name="table" value="parents">
                         <input type="hidden" name="id" value="<?= $row['p_id'] ?>">
-                        <button type="submit" class="subBtn">View User</button>
+                        <button type="submit" class="vbtn">View User</button>
                     </form>
                     <form action="edit.php" method="GET" style="display: inline;">
                         <input type="hidden" name="id" value="<?= $row['p_id'] ?>">
-                        <button type="submit" class="subBtn">Update</button>
+                        <button type="submit" class="tabbtn">Update</button>
                     </form>
                     <form action="delete.php" method="post" style="display:inline;">
                         <input type="hidden" name="id" value="<?= $row['p_id'] ?>">

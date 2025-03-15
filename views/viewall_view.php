@@ -10,7 +10,6 @@
 <div class="container">
 
     <?php
-    // Function to display data in a formatted way
     function displayData($label, $value) {
         return "<div class='flex-item'><span class='info-label'>" . htmlspecialchars($label) . ":</span> <span class='info-value'>" . htmlspecialchars($value) . "</span></div>";
     }
@@ -77,7 +76,6 @@
         echo displayData("Zip Code", $addressData['h_zip']);
         echo "</div>";
     }
-
     if (!empty($data['contact'])) {
         $contactData = $data['contact'];
         echo "<h2>Contact Information</h2>";
