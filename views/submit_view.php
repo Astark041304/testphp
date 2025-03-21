@@ -116,7 +116,7 @@
                 <th>Street Name</th> 
                 <th>Subdivision</th> 
                 <th>Barangay</th> 
-                <th>City</th> 
+                <th>Municipality</th> 
                 <th>Province</th> 
                 <th>Country</th> 
                 <th>Zip Code</th>
